@@ -1,0 +1,31 @@
+﻿@model IEnumerable<RugbyTeamsEFMVC.Models.Team>;
+
+@{
+    ViewData["Title"] = "Title - Team";
+}
+
+<a class="text-white btn btn-primary mt-3" asp-controller="Team" asp-action="CreateTeam">Add New Team</a>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Wins</th>
+        <th>Losses</th>
+    </tr>
+    @foreach (var team in Model)
+    {
+        <tr>
+            <td>@team.Id</td>
+            <td>@team.Name</td>
+            <td>@team.City</td>
+            <td>@team.State</td>
+            <td>@team.Wins</td>
+            <td>@team.Losses</td>
+            <td><a class="text-white btn btn-info mt-3" asp-controller="Team" asp-action="EditTeam" asp-route-id="@team.Id">Edit</a></td>
+            <td><a class="text-white btn btn-danger mt-3" asp-controller="Team" asp-action="DeleteTeam" asp-route-id="@team.Id">Delete</a></td>
+        </tr>
+    }
+</table>
