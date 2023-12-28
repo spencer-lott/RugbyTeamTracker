@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RugbyTeamsEFMVC.Context;
 
@@ -10,9 +11,11 @@ using RugbyTeamsEFMVC.Context;
 namespace RugbyTeamsEFMVC.Migrations
 {
     [DbContext(typeof(TeamDbContext))]
-    partial class TeamDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231228225615_NewTablePlayer")]
+    partial class NewTablePlayer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

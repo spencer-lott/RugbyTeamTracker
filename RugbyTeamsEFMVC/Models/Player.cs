@@ -48,6 +48,6 @@ namespace RugbyTeamsEFMVC.Models
         //Relationship with the Team model/table
         public int TeamId { get; set; } //Foreign Key
 
-        public Team Team { get; set; }
+        public Team Team { get; set; } //Reference navigation property
     }
 }
