@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Player>
+@{
+    ViewBag.Title = "Players";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p><h1>Players</h1></p>
+        <table class="table">
+            <tr>
+                <th>Full Name</th>
+                <th>Notes</th>
+                <th>Position</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var player in Model)
+            {
+                <tr>
+                    <td>@player.FullName</td>
+                    <td>@player.Notes</td>
+                    <td>@player.Position</td>
+                    <td>@player.CompleteHeight</td>
+                    <td>@player.Weight</td>
+@*                     <td><a class="text-dark btn btn-outline-success" asp-controller="Article" asp-action="EditArticle" asp-route-id="@player.ArticleId">Edit</a></td>
+                    <td><a class="text-dark btn btn-outline-danger" asp-controller="Article" asp-action="DeleteArticle" asp-route-id="@player.ArticleId">Delete</a></td>
+ *@                </tr>
+            }
+        </table>
+    </div>
+</div>

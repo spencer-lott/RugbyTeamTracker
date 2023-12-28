@@ -18,6 +18,7 @@ namespace RugbyTeamsEFMVC
             builder.Services.AddDbContext<TeamDbContext>(options => options.UseSqlServer(connectionString));
 
             builder.Services.AddScoped<ITeamRepository, TeamRepository>();
+            builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 
             var app = builder.Build();
 
