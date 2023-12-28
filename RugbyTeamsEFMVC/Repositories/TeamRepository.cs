@@ -1,6 +1,7 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using RugbyTeamsEFMVC.Context;
 using RugbyTeamsEFMVC.Models;
+using RugbyTeamsEFMVC.ViewModels;
 
 namespace RugbyTeamsEFMVC.Repositories
 {
@@ -14,7 +15,7 @@ namespace RugbyTeamsEFMVC.Repositories
         }
         public IEnumerable<Team> GetAll()
         {
-            return _context.Teams.ToList();
+            return _context.Teams;
 
         }
         public Team GetById(int id)

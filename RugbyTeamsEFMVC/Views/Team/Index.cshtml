@@ -14,10 +14,12 @@
         <th>State</th>
         <th>Wins</th>
         <th>Losses</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     @foreach (var team in Model)
     {
-        <tr>
+         <tr>
             <td>@team.Id</td>
             <td>@team.Name</td>
             <td>@team.City</td>
@@ -28,4 +30,5 @@
             <td><a class="text-white btn btn-danger mt-3" asp-controller="Team" asp-action="DeleteTeam" asp-route-id="@team.Id">Delete</a></td>
         </tr>
     }
+
 </table>
