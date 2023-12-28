@@ -23,5 +23,8 @@ namespace RugbyTeamsEFMVC.Models
         public int Wins { get; set; }
 
         public int Losses { get; set; }
+
+        //Relationship
+        public List<Player> Players { get; set; }
     }
 }

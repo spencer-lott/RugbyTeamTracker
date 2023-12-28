@@ -10,5 +10,7 @@ namespace RugbyTeamsEFMVC.Context
         }
 
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Player> Players { get; set; }
+
     }
 }
