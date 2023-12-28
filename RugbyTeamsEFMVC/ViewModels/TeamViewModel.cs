@@ -1,6 +1,4 @@
-﻿
-
-using RugbyTeamsEFMVC.Models;
+﻿using RugbyTeamsEFMVC.Models;
 
 namespace RugbyTeamsEFMVC.ViewModels
 {
@@ -8,6 +6,8 @@ namespace RugbyTeamsEFMVC.ViewModels
     {
         public Team team { get; set; }
         public string title { get; set; }
+
+
 
     }
 }

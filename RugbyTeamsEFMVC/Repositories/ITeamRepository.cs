@@ -1,4 +1,5 @@
 ﻿using RugbyTeamsEFMVC.Models;
+using RugbyTeamsEFMVC.ViewModels;
 
 namespace RugbyTeamsEFMVC.Repositories
 {
@@ -12,7 +13,7 @@ namespace RugbyTeamsEFMVC.Repositories
 
         Team Update(Team team); 
 
-        void Delete(int id); 
+        Team Delete(int id); 
 
     }
 }

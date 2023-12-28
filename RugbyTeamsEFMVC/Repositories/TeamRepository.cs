@@ -1,6 +1,7 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using RugbyTeamsEFMVC.Context;
 using RugbyTeamsEFMVC.Models;
+using RugbyTeamsEFMVC.ViewModels;
 
 namespace RugbyTeamsEFMVC.Repositories
 {
@@ -29,7 +30,7 @@ namespace RugbyTeamsEFMVC.Repositories
             return team;
         }
 
-        public void Delete(int id)
+        public Team Delete(int id)
         {
             Team team = _context.Teams.Find(id);
             if (team != null) 
@@ -37,6 +38,7 @@ namespace RugbyTeamsEFMVC.Repositories
                 _context.Teams.Remove(team);
                 _context.SaveChanges();
             }
+            return team;
         }
 
 

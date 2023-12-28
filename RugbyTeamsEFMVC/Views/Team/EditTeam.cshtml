@@ -1,10 +1,11 @@
 ﻿@model RugbyTeamsEFMVC.Models.Team
 
 @{
-    ViewBag.Title = "Create Tutorial";
+    ViewBag.Title = "Edit Team";
 }
 
-<form method="post" asp-controller="Team" asp-action="CreateTeam">
+<form class="mt-3" method="post" asp-controller="Team" asp-action="EditTeam">
+    <input hidden asp-for="Id" />
 @*     <partial name="_TeamFormFields" model="Model" />
  *@
     <div class="form-group">
@@ -20,16 +21,6 @@
         <label asp-for="State">@Html.DisplayNameFor(model => model.State) </label>
         <input asp-for="State" class="form-control" />
         <span asp-validation-for="City" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Wins">@Html.DisplayNameFor(model => model.Wins) </label>
-        <input asp-for="Wins" class="form-control" />
-        <span asp-validation-for="Wins" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Losses">@Html.DisplayNameFor(model => model.Losses) </label>
-        <input asp-for="Losses" class="form-control" />
-        <span asp-validation-for="Losses" class="text-danger"></span>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>

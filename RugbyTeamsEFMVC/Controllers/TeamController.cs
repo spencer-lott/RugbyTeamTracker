@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RugbyTeamsEFMVC.Models;
 using RugbyTeamsEFMVC.Repositories;
+using RugbyTeamsEFMVC.ViewModels;
 
 namespace RugbyTeamsEFMVC.Controllers
 {
@@ -40,7 +41,7 @@ namespace RugbyTeamsEFMVC.Controllers
                 return View(team);
             }
             Team newTeam = _teamRepository.Add(team);
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -61,14 +62,16 @@ namespace RugbyTeamsEFMVC.Controllers
             team.Name = modifiedData.Name;
             team.City = modifiedData.City;
             team.State = modifiedData.State;
+            //team.Wins = modifiedData.Wins;
+            //team.Losses = modifiedData.Losses;
             Team updatedTeam = _teamRepository.Update(team);
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         public IActionResult DeleteTeam(int id)
         {
             _teamRepository.Delete(id);
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }
 }
