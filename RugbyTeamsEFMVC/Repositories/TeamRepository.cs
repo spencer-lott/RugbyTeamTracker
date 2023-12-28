@@ -14,7 +14,7 @@ namespace RugbyTeamsEFMVC.Repositories
         }
         public IEnumerable<Team> GetAll()
         {
-            return _context.Teams.ToList();
+            return _context.Teams;
 
         }
         public Team GetById(int id)
@@ -29,7 +29,7 @@ namespace RugbyTeamsEFMVC.Repositories
             return team;
         }
 
-        public Team Delete(int id)
+        public void Delete(int id)
         {
             Team team = _context.Teams.Find(id);
             if (team != null) 
@@ -37,7 +37,6 @@ namespace RugbyTeamsEFMVC.Repositories
                 _context.Teams.Remove(team);
                 _context.SaveChanges();
             }
-            return team;
         }
 
 

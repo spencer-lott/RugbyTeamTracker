@@ -14,7 +14,7 @@ namespace RugbyTeamsEFMVC.Controllers
         }
         public IActionResult Index()
         {
-            var teams = _teamRepository.GetAll();
+            IEnumerable<Team> teams = _teamRepository.GetAll();
             return View(teams);
         }
 
@@ -40,7 +40,7 @@ namespace RugbyTeamsEFMVC.Controllers
                 return View(team);
             }
             Team newTeam = _teamRepository.Add(team);
-            return View(team);
+            return View("Index");
         }
 
         [HttpGet]
@@ -67,7 +67,7 @@ namespace RugbyTeamsEFMVC.Controllers
 
         public IActionResult DeleteTeam(int id)
         {
-            Team deletedTeam = _teamRepository.Delete(id);
+            _teamRepository.Delete(id);
             return View("Index");
         }
     }

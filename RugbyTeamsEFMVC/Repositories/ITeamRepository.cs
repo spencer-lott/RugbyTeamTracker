@@ -12,7 +12,7 @@ namespace RugbyTeamsEFMVC.Repositories
 
         Team Update(Team team); 
 
-        Team Delete(int id); 
+        void Delete(int id); 
 
     }
 }

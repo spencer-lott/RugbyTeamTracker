@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RugbyTeamsEFMVC.Models.Team>;
+﻿@model IEnumerable<Team>
 
 @{
     ViewData["Title"] = "Title - Team";
@@ -14,6 +14,8 @@
         <th>State</th>
         <th>Wins</th>
         <th>Losses</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     @foreach (var team in Model)
     {

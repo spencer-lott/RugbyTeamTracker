@@ -1,0 +1,10 @@
+﻿@model RugbyTeamsEFMVC.Models.Team
+
+@{
+    ViewBag.Title = "Create Tutorial";
+}
+
+<form method="post" asp-controller="Team" asp-action="CreateTeam">
+    <partial name="_TeamFormFields" model="Model" />
+
+</form>
