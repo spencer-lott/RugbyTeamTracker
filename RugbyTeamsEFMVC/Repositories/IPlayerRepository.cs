@@ -15,6 +15,8 @@ namespace RugbyTeamsEFMVC.Repositories
 
         IEnumerable<Player> GetAllPlayers();
 
+        IEnumerable<Team> GetAllTeams();
+
         IEnumerable<Player> GetPlayersByTeamId(int teamId);
 
 

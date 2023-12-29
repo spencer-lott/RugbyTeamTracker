@@ -6,6 +6,7 @@
 <div class="row text">
     <div class="col-md-8 offset-2">
         <p><h1>Players</h1></p>
+        <a class="text-white btn btn-primary mt-3" asp-controller="Player" asp-action="CreatePlayer">Add New Player</a>
         <table class="table">
             <tr>
                 <th>Full Name</th>
@@ -23,7 +24,7 @@
                     <td>@player.Notes</td>
                     <td>@player.Position</td>
                     <td>@player.CompleteHeight</td>
-                    <td>@player.Weight</td>
+                    <td>@player.Weight lbs.</td>
 @*                     <td><a class="text-dark btn btn-outline-success" asp-controller="Article" asp-action="EditArticle" asp-route-id="@player.ArticleId">Edit</a></td>
                     <td><a class="text-dark btn btn-outline-danger" asp-controller="Article" asp-action="DeleteArticle" asp-route-id="@player.ArticleId">Delete</a></td>
  *@                </tr>

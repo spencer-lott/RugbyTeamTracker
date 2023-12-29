@@ -14,7 +14,19 @@ namespace RugbyTeamsEFMVC.Repositories
         }
         public void AddPlayer(PlayerViewModel player)
         {
-            throw new NotImplementedException();
+            var newPlayer = new Player()
+            {
+                FirstName = player.FirstName,
+                LastName = player.LastName,
+                Notes = player.Notes,
+                Position = player.Position,
+                HeightFt = player.HeightFt,
+                HeightIn = player.HeightIn,
+                Weight = player.Weight,
+                TeamId = player.TeamId
+            };
+            _context.Players.Add(newPlayer);
+            _context.SaveChanges();
         }
 
         public void DeletePlayer(int id)
@@ -37,9 +49,14 @@ namespace RugbyTeamsEFMVC.Repositories
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Team> GetAllTeams()
+        {
+            return _context.Teams;
+        }
+
         IEnumerable<Player> IPlayerRepository.GetPlayersByTeamId(int teamId)
         {
-            throw new NotImplementedException();
+            return _context.Players.Where(a => a.TeamId == teamId).ToList();
         }
     }
 }
