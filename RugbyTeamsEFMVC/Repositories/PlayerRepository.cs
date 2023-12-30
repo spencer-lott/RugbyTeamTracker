@@ -31,7 +31,12 @@ namespace RugbyTeamsEFMVC.Repositories
 
         public void DeletePlayer(int id)
         {
-            throw new NotImplementedException();
+            Player player = _context.Players.Find(id);
+            if(player != null)
+            {
+                _context.Players.Remove(player);
+                _context.SaveChanges();
+            }
         }
 
         public IEnumerable<Player> GetAllPlayers()
