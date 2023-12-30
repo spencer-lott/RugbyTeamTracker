@@ -41,12 +41,14 @@ namespace RugbyTeamsEFMVC.Repositories
 
         public Player GetPlayerById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Players.Find(id);
         }
 
-        public Player UpdatePlayer(Player player)
+        public Player UpdatePlayer(Player updatedPlayer)
         {
-            throw new NotImplementedException();
+            _context.Update(updatedPlayer);
+            _context.SaveChanges();
+            return updatedPlayer;
         }
 
         public IEnumerable<Team> GetAllTeams()
